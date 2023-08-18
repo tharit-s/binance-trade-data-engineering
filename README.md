@@ -9,10 +9,12 @@ Bitazza assignment for data engineer
     - reset the password and use the api key instead
 - design the data lakehouse zones
     - bronze
-        - get full load data
+        - get full load data via rest api
+        - get streaming data via socket
     - silver
         - transform data
     - gold
         - analyze data
+- review the virtual environment
 - write a document in README.md
 - notify an email for the intruction
