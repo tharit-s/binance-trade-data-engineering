@@ -50,15 +50,18 @@ Bitazza assignment for data engineer
 
 ## Full Load Data Ingestion
 - Get 2 records of `AAVEUSDT` from Binance RESTful API
+```
 [
     {'id': 104388712, 'price': '56.21000000', 'qty': '0.24300000', 'quoteQty': '13.65903000', 'time': 1692433675009, 'isBuyerMaker': False, 'isBestMatch': True
     },
     {'id': 104388713, 'price': '56.22000000', 'qty': '0.30100000', 'quoteQty': '16.92222000', 'time': 1692433707250, 'isBuyerMaker': False, 'isBestMatch': True
     }
 ]
+```
 
 ## Data Lakehouse Architect Design
 ### Folder structure
+```
 datalakehouse
 ├── bronze
 │   ├── batch
@@ -91,6 +94,7 @@ datalakehouse
     │   └── coin2_minutely_30.csv
     │   └── coin2_minutely_60.csv
     └── streaming
+```
 ## Data model
 ### Bronze Zone
 #### Landing
@@ -126,6 +130,7 @@ datalakehouse
 - `position`: The position of the broker for the coin in the given minute (i.e., "buy" or "sell").
 
 ## Structuring project
+```
 src
 ├── main
 │   ├── __init__.py
@@ -143,3 +148,4 @@ src
         ├── __init__.py
         └── gold_module.py
         └── main.py
+```
