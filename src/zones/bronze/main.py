@@ -6,4 +6,4 @@ if __name__ == "__main__":
     symbols = ["AAVEUSDT", "STXUSDT", "ARBUSDT"]
 
     for symbol in symbols:
-        FullLoadDataIngestion(symbol=symbol, limit=10).write_trade_data_to_json()
+        FullLoadDataIngestion(symbol=symbol, limit=1000).write_trade_data_to_json()
