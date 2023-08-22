@@ -8,7 +8,7 @@ Bitazza assignment for data engineer
     - how to generate api key: https://stackoverflow.com/questions/67376632/how-to-create-binance-test-api-key
 - try to use git on github -> done
     - reset the password and use the api key instead
-- design the data lakehouse zones from the assignment
+- design the data lakehouse zones from the assignment -> done
     - bronze
         - get full load data via restful api
             - how to write a list of dictionaries into the local folder
@@ -44,7 +44,10 @@ Bitazza assignment for data engineer
 - design a diagram -> done
     -  ![diagram v1](./images/bitazza-diagram-v1.jpg)
 - design a architect -> done
+- design data medel in dbdiagram.io
 - review the virtual environment
+- apply the virtual environment into the project
+- add a note.md to store my short note while implementing
 - write a document in README.md
 - notify an email for the intruction
 
@@ -68,19 +71,19 @@ datalakehouse
 │   │   ├── coin1.json
 │   │   ├── coin2.json
 │   └── streaming
-└── silver
-    ├── batch
-    │   ├── coin1_minutely_1.csv
-    │   ├── coin1_minutely_5.csv
-    │   ├── coin1_minutely_15.csv
-    │   ├── coin1_minutely_30.csv
-    │   ├── coin1_minutely_60.csv
-    │   └── coin2_minutely_1.csv
-    │   └── coin2_minutely_5.csv
-    │   └── coin2_minutely_15.csv
-    │   └── coin2_minutely_30.csv
-    │   └── coin2_minutely_60.csv
-    └── streaming
+├── silver
+│   ├── batch
+│   │   ├── coin1_minutely_1.csv
+│   │   ├── coin1_minutely_5.csv
+│   │   ├── coin1_minutely_15.csv
+│   │   ├── coin1_minutely_30.csv
+│   │   ├── coin1_minutely_60.csv
+│   │   └── coin2_minutely_1.csv
+│   │   └── coin2_minutely_5.csv
+│   │   └── coin2_minutely_15.csv
+│   │   └── coin2_minutely_30.csv
+│   │   └── coin2_minutely_60.csv
+│   └── streaming
 └── gold
     ├── batch
     │   ├── coin1_minutely_1.csv
