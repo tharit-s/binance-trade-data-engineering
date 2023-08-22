@@ -5,7 +5,7 @@ import os
 
 class FullLoadDataIngestion:
     MAIN_FOLDER = "datalakehouse"
-    ZONE_FOLDER = "bronze"
+    TARGET_ZONE_FOLDER = "bronze"
     INGESTION_FOLDER = "batch"
 
     def __init__(self, symbol, limit=None):
@@ -23,7 +23,7 @@ class FullLoadDataIngestion:
         return os.path.join(
             Path(__file__).parents[3],
             self.MAIN_FOLDER,
-            self.ZONE_FOLDER,
+            self.TARGET_ZONE_FOLDER,
             self.INGESTION_FOLDER,
             f"{self.symbol}.json"
         )
