@@ -2,6 +2,7 @@ import binance
 import json
 import os
 
+
 class DataIngestion:
 
     def __init__(self, symbol, limit, target_folder_path):

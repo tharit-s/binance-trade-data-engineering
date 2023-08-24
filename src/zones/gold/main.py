@@ -22,8 +22,15 @@ target_folder_path = os.path.join(
     INGESTION_FOLDER
 )
 
+ma_periods = [50, 100, 150]
+ma_lower_position = 50
+ma_upper_position = 100
+
 data_processor = DataProcessor(
     source_folder_path=source_folder_path, 
-    target_folder_path=target_folder_path
+    target_folder_path=target_folder_path,
+    ma_periods=ma_periods,
+    ma_lower_position=ma_lower_position,
+    ma_upper_position=ma_upper_position
     )
 data_processor.process_data()
