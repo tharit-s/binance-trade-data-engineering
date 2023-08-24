@@ -1,25 +1,19 @@
 import pandas as pd
-from pathlib import Path
 import os
 
 class DataProcessor:
-    def __init__(self, source_folder, target_folder):
-        self.source_folder = source_folder
-        self.target_folder = target_folder
+    def __init__(self, source_folder_path, target_folder_path):
+        self.source_folder_path = source_folder_path
+        self.target_folder_path = target_folder_path
         pd.set_option("display.max_columns", 100)
 
     def process_data(self):
-        source_folder_path = os.path.join(
-            Path(__file__).parents[3],
-            self.source_folder
-        )
-
-        json_files = os.listdir(source_folder_path)
+        json_files = os.listdir(self.source_folder_path)
 
         for json_file in json_files:
             json_filename = json_file.split(".json")[0]
             
-            df_temp = pd.read_json(f"{source_folder_path}/{json_file}")
+            df_temp = pd.read_json(f"{self.source_folder_path}/{json_file}")
             df_temp['minute'] = df_temp['time'] // 60000
             df_temp['time'] = pd.to_datetime(df_temp['time'], unit='ms', errors='coerce')
             df_temp['open'] = df_temp.groupby('minute')['price'].transform('first')
@@ -33,8 +27,7 @@ class DataProcessor:
             
             for minutely_interval in minutely_intervals:
                 target_path = os.path.join(
-                    Path(__file__).parents[3],
-                    self.target_folder,
+                    self.target_folder_path,
                     f"{json_filename}_minutely_{minutely_interval}.csv"
                 )
                 

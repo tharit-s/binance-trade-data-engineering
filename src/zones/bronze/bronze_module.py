@@ -1,16 +1,13 @@
 import binance
 import json
-from pathlib import Path
 import os
 
-class FullLoadDataIngestion:
-    MAIN_FOLDER = "datalakehouse"
-    TARGET_ZONE_FOLDER = "bronze"
-    INGESTION_FOLDER = "batch"
+class DataIngestion:
 
-    def __init__(self, symbol, limit=None):
+    def __init__(self, symbol, limit, target_folder_path):
         self.symbol = symbol
         self.limit = limit
+        self.target_folder_path = target_folder_path
         self.client = binance.Client()
 
     def get_trade_data(self):
@@ -21,10 +18,7 @@ class FullLoadDataIngestion:
 
     def get_target_path(self):
         return os.path.join(
-            Path(__file__).parents[3],
-            self.MAIN_FOLDER,
-            self.TARGET_ZONE_FOLDER,
-            self.INGESTION_FOLDER,
+            self.target_folder_path,
             f"{self.symbol}.json"
         )
 
