@@ -1,9 +1,11 @@
 from bronze_module import DataIngestion
 from pathlib import Path
 import os
+from symbol_user_input_module import clean_symbols_with_user_input_and_default
 
 
-symbols = ["AAVEUSDT", "STXUSDT", "ARBUSDT"]
+symbols = clean_symbols_with_user_input_and_default()
+print("Input: list of symbols:", symbols)
 limit = 1000
 
 MAIN_FOLDER = "datalakehouse"
