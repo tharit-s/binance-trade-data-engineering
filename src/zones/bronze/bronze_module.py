@@ -12,10 +12,17 @@ class DataIngestion:
         self.client = binance.Client()
 
     def get_trade_data(self):
-        return self.client.get_historical_trades(
-            symbol=self.symbol,
-            limit=self.limit
-        )
+        try:
+            return self.client.get_historical_trades(
+                symbol=self.symbol,
+                limit=self.limit
+            )
+        except binance.exceptions.BinanceAPIException as e:
+            print(f"An error occurred while fetching trade data: {e}")
+            return None
+        except Exception as e:
+            print(f"An unknown error occurred: {e}")
+            return None
 
     def get_target_path(self):
         return os.path.join(
@@ -24,5 +31,7 @@ class DataIngestion:
         )
 
     def write_trade_data_to_json(self):
-        with open(self.get_target_path(), "w") as f:
-            json.dump(self.get_trade_data(), f)
+        trade_data = self.get_trade_data()
+        if trade_data is not None:
+            with open(self.get_target_path(), "w") as f:
+                json.dump(trade_data, f)
