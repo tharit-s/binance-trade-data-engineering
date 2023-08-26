@@ -28,6 +28,7 @@ pip install -r requirements.txt
 ```
 
 ## Run
+End-2-end Diagram ![end-to-end diagram v2](./images/end-to-end-v1.jpg)
 
 To run this project, follow these steps:
 

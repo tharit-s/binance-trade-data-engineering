@@ -44,6 +44,7 @@
         - V1 ![diagram high level v1](./images/diagram-high-level-v1.jpg)
     -  Low Level 
         - V1 ![diagram low level v1](./images/diagram-low-level-v1.jpg)
+        - V2 ![diagram low level v2](./images/diagram-low-level-v2.jpg)
 - design a architect -> done
 - design data medel in dbdiagram.io -> done
     -  ![diagram v1](./images/database-schema-v1.png)
