@@ -20,7 +20,7 @@ class DataProcessor:
             df_ma_positions = self.calculate_positions(df_ma, self.ma_lower_position, self.ma_upper_position)
 
             target_path = os.path.join(self.target_folder_path, csv_file)
-            df_ma_positions.to_csv(target_path)
+            df_ma_positions.to_csv(target_path, index=False)
 
     @staticmethod
     def calculate_moving_averages(df, ma_periods):
