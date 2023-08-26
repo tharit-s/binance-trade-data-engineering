@@ -190,6 +190,9 @@ datalakehouse
 - **ma200**: 200-period Moving Average value
   - Example: 1.0056
 
+- **position**: Our broker wants to buy and hold the asset by comarison between MA(low) and MA(high) when the MA(50) < MA(100), and sell to hold BUSD or USDT when MA(50) >= MA(100).
+  - Example: SELL, BUY
+
 ## Structuring project
 ```
 src
