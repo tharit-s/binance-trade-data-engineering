@@ -40,9 +40,13 @@
             - create a new column for storing the status to buy or sell with the MA conditions
 - naming convention -> done
 - design a diagram -> done
-    -  ![diagram v1](./images/bitazza-diagram-v1.jpg)
+    -  High Level 
+        - V1 ![diagram high level v1](./images/diagram-high-level-v1.jpg)
+    -  Low Level 
+        - V1 ![diagram low level v1](./images/diagram-low-level-v1.jpg)
 - design a architect -> done
-- design data medel in dbdiagram.io
+- design data medel in dbdiagram.io -> done
+    -  ![diagram v1](./images/database-schema-v1.png)
 - review the virtual environment -> done
 - apply the virtual environment into the project -> done
 - add a note.md to store my short note while implementing -> done
@@ -151,9 +155,6 @@ datalakehouse
 
 ### Gold Zone
 #### Analysis (compare MA(50) and MA(100) for decision making)
-- **Index**: Unique identifier for the data entry
-  - Example: 0
-
 - **time**: Timestamp of the data entry
   - Example: 2023-08-24 03:03:00
 
