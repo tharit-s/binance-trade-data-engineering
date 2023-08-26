@@ -7,32 +7,44 @@ To setup this project, follow these steps:
 git clone https://github.com/tharit-s/binance-trade-data-engineering.git
 ```
 
-2. Create a virtual environment:
+2. Go to the project root path:
+```
+cd binance-trade-data-engineering
+```
+
+3. Create a virtual environment:
 ```
 python3 -m venv env
 ```
 
-3. Activate the virtual environment:
+4. Activate the virtual environment:
 ```
 source env/bin/activate
 ```
 
-4. Install the dependencies:
+5. Install the dependencies:
 ```
 pip install -r requirements.txt
 ```
 
-5. Run the project:
+## Run
 
-- Data ingestion trade data from binance to the brzone folder
+To run this project, follow these steps:
+
+1. Data ingestion trade data from binance to the brzone folder
 ```
-python -m src.zones.bronze.main
+python src/zones/bronze/main.py
 ```
-- Data transform trade data from the bronze fodler to the silver folder
+- After running the `main.py` script in the `bronze` zone, you will be prompted to select an option:
+    - Option1: **Enter** to skip and use the default
+    - Option2: **Input** your own symbols separated by commas for a sample list: `AAVEUSDT,STXUSDT,ARBUSDT` and then **Enter** to continue
+
+2. Data transform trade data from the bronze fodler to the silver folder
 ```
-python -m src.zones.silver.main
+python src/zones/silver/main.py
 ```
-- Data transform trade data from the silver fodler to the gold folder
+
+3. Data transform trade data from the silver fodler to the gold folder
 ```
-python -m src.zones.gold.main
+python src/zones/gold/main.py
 ```
