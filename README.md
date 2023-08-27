@@ -7,6 +7,7 @@ This data engineering mini project implements the basics of a data lakehouse by 
 - [Run](#run)
 - [How It Works](#how-it-works)
 - [Limitations](#limitations)
+- [Learn](#learn)
 
 ## Setup
 
@@ -42,7 +43,7 @@ End-2-end Diagram ![end-to-end diagram v2](./images/end-to-end-v3.jpg)
 
 To run this project, follow these steps:
 
-1. Data ingestion trade data from binance to the brzone folder
+1. Data ingestion trade data from binance to the bronze folder
 ```
 python src/zones/bronze/main.py
 ```
@@ -268,3 +269,32 @@ This project has the following limitations:
 - The system cannot calculate a moving average for periods of `50`, `100`, or `200` because there is not enough data. This is because the moving average is calculated by averaging the price of a security over a period of time. If there is not enough data, then the moving average cannot be calculated accurately.
     - To address this limitation, I set the min_period argument to `1`. This means that the system will always calculate a moving average, even if there is not enough data. However, the moving average may not be accurate for periods of `50`, `100`, or `200`.
 - The system will create a data lakehouse for the gold zone before receiving a user input to visualize data. This means that the system can only visualize the data for a single minutely interval at a time. To visualize the data for a different minutely interval, you will need to enter a new user input and run the main.py file in the gold zone again.
+
+## Learn
+- Git branch strategry
+    - Github
+        - Pull requests feature
+- Python
+    - Virtual Environment
+    - OOP
+- Markdown
+    - README.md
+- Data Lakehouse
+    - zones
+        - bronze
+        - silver
+        - gold
+- Data Visualization
+    - matplotlib
+    - mplfinance
+- Data Schema
+    - Data Dictionary Design
+    - Data Model Design
+- Data Architect
+    - Design
+        - High Level
+        - Low Level
+        - End-to-end
+- Explore my learning log in [learning-log.md](learning_log.md)
+    - Action items
+    - Short notes
