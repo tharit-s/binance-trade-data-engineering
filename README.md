@@ -1,5 +1,5 @@
 # Binance Trade Data Engineering
-This project is a data engineering mini project that practices the basics of a data lakehouse by ingesting data from a source, storing and processing data in a data lakehouse zone including to bronze, silver, and gold.
+This data engineering mini project implements the basics of a data lakehouse by ingesting data from a source, storing and processing the data in three zones: bronze, silver, and gold.
 
 ## Table of Contents
 
