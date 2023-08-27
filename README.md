@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ```
 
 ## Run
-End-2-end Diagram ![end-to-end diagram v2](./images/end-to-end-v2.jpg)
+End-2-end Diagram ![end-to-end diagram v2](./images/end-to-end-v3.jpg)
 
 To run this project, follow these steps:
 
@@ -59,6 +59,9 @@ python src/zones/silver/main.py
 ```
 python src/zones/gold/main.py
 ```
+- After running the `main.py` script in the `gold` zone, you will be prompted to select an option:
+    - Option1: **Enter** to skip data visualization
+    - Option2: **Input** your own minutely interval for a sample value: `1`/ `5`/ `15`/ `30`/ `60` and then **Enter** to continue
 
 ## How It Works
 This project works by ingesting data from Binance, storing and processing the data in a data lakehouse.
@@ -107,11 +110,12 @@ src
     │   └── main.py
     ├── silver
     │   ├── __init__.py
-    │   └── silver_module.py
+    │   ├── silver_module.py
     │   └── main.py
     └── gold
         ├── __init__.py
-        └── gold_module.py
+        ├── __init__.py
+        ├── gold_module.py
         └── main.py
 ```
 - Data
@@ -158,6 +162,7 @@ datalakehouse
     - **learning_log.md**: This file is a learning log for the project. It documents the steps that were taken to learn and implement the project.
 
 ### Data Schema
+![data schema v1](./images/database-schema-v1.png)
 1. Bronze
 - **id**: Unique identifier for the data entry
   - Example: 32492152
@@ -248,8 +253,18 @@ datalakehouse
 - **position**: Our broker wants to buy and hold the asset by comarison between MA(low) and MA(high) when the MA(50) < MA(100), and sell to hold BUSD or USDT when MA(50) >= MA(100).
   - Example: SELL, BUY
 
+### Data Visualization
+Once you enter the minutely interval you want to visualize, the system will always first read all coins from the gold zone. Then, it will display two charts for each coin. 
+1. OHLC Candle Stick Chart: The first chart will show the price of the coin over time.
+![ohlc candle stick chart](./images/ohlc_candle_stick_stxusdt_1_min.png)
+2. OHLC Data with Technial Indicators: The second chart will show the price of trading for the coin over time together the technical indicator as MA(Moving Average) and the position for BUY and SELL.
+![ohlc data with technical indicators](./images/ohlc_ma_position_stxusdt_1_min.png)
+
 ## Limitations
 This project has the following limitations:
 - Streaming data is not implemented. The project currently only supports batch data.
 - The system does not remove existing data before starting a new list of symbols. This means that if you start a new list of symbols that is different from the previous list, the data for the previous list may be replaced or incremented.
 - The system does not implement a `main.py` file in the `src` directory. This means that the system cannot be run as a standalone program.
+- The system cannot calculate a moving average for periods of `50`, `100`, or `200` because there is not enough data. This is because the moving average is calculated by averaging the price of a security over a period of time. If there is not enough data, then the moving average cannot be calculated accurately.
+    - To address this limitation, I set the min_period argument to `1`. This means that the system will always calculate a moving average, even if there is not enough data. However, the moving average may not be accurate for periods of `50`, `100`, or `200`.
+- The system will create a data lakehouse for the gold zone before receiving a user input to visualize data. This means that the system can only visualize the data for a single minutely interval at a time. To visualize the data for a different minutely interval, you will need to enter a new user input and run the main.py file in the gold zone again.
