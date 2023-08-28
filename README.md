@@ -68,7 +68,7 @@ This project works by ingesting data from Binance, storing and processing the da
 
 ### Data Architecture
 - End-to-End Diagram ![end-to-end diagram v2](./images/end-to-end-v3.jpg)
-  - Remarks:
+  - This image shows how all the different parts work together to make everything happen. The notes match important points in the image's steps:
     - `run1.1`: Begin the data pipeline and request user input before proceeding to run.
     - `run1.2`: Execute the data pipeline on the second entry.
     - `run2`: Execute the data pipeline.
