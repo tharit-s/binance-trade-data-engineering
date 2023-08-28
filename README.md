@@ -62,7 +62,8 @@ python src/zones/gold/main.py
 - After running the `main.py` script in the `gold` zone, you will be prompted to select an option:
     - Option1: **Enter** to skip data visualization
     - Option2: **Input** your own minutely interval for a sample value: `1`/ `5`/ `15`/ `30`/ `60` and then **Enter** to continue
-
+      - As it runs, the system reads trading data for all coins in the gold zone at the minutely interval you specify. If you want to view another chart for different coins, you'll need to close the current chart. You can view data visualizaiton through [two charts](#data-visualization) available for every individual coin.
+      
 ## How It Works
 This project works by ingesting data from Binance, storing and processing the data in a data lakehouse.
 
