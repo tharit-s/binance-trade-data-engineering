@@ -39,13 +39,6 @@ pip install -r requirements.txt
 ```
 
 ## Run
-End-2-end Diagram ![end-to-end diagram v2](./images/end-to-end-v3.jpg)
-- Remarks:
-  - `run1.1`: Begin the data pipeline and request user input before proceeding to run.
-  - `run1.2`: Execute the data pipeline on the second entry.
-  - `run2`: Execute the data pipeline.
-  - `run3.1`: Execute the data pipeline on the first entry.
-  - `run3.2`: Execute on the second entry to request user input before proceeding to run.
 
 To run this project, follow these steps:
 
@@ -72,7 +65,15 @@ python src/zones/gold/main.py
 
 ## How It Works
 This project works by ingesting data from Binance, storing and processing the data in a data lakehouse.
+
 ### Data Architecture
+- End-to-End Diagram ![end-to-end diagram v2](./images/end-to-end-v3.jpg)
+  - Remarks:
+    - `run1.1`: Begin the data pipeline and request user input before proceeding to run.
+    - `run1.2`: Execute the data pipeline on the second entry.
+    - `run2`: Execute the data pipeline.
+    - `run3.1`: Execute the data pipeline on the first entry.
+    - `run3.2`: Execute on the second entry to request user input before proceeding to run.
 - High Level Design
 ![diagram high level v1](./images/diagram-high-level-v1.jpg)
 - Low Level Design
@@ -310,8 +311,9 @@ This project has the following limitations:
     - matplotlib
     - mplfinance
 - Data Schema
-    - Data Dictionary Design
-    - Data Model Design
+    - Design
+      - Data Dictionary
+      - Data Model
 - Data Architect
     - Design
         - High Level
