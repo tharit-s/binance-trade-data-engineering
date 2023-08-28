@@ -40,6 +40,12 @@ pip install -r requirements.txt
 
 ## Run
 End-2-end Diagram ![end-to-end diagram v2](./images/end-to-end-v3.jpg)
+- Remarks:
+  - `run1.1`: Begin the data pipeline and request user input before proceeding to run.
+  - `run1.2`: Execute the data pipeline on the second entry.
+  - `run2`: Execute the data pipeline.
+  - `run3.1`: Execute the data pipeline on the first entry.
+  - `run3.2`: Execute on the second entry to request user input before proceeding to run.
 
 To run this project, follow these steps:
 
@@ -258,8 +264,24 @@ datalakehouse
 Once you enter the minutely interval you want to visualize, the system will always first read all coins from the gold zone. Then, it will display two charts for each coin. 
 1. OHLC Candle Stick Chart: The first chart will show the price of the coin over time.
 ![ohlc candle stick chart](./images/ohlc_candle_stick_stxusdt_1_min.png)
+- Candle Stick chart:
+  - Open
+  - High
+  - Low
+  - Close
 2. OHLC Data with Technial Indicators: The second chart will show the price of trading for the coin over time together the technical indicator as MA(Moving Average) and the position for BUY and SELL.
 ![ohlc data with technical indicators](./images/ohlc_ma_position_stxusdt_1_min.png)
+- Line chart:
+  - Open
+  - High
+  - Low
+  - Close
+  - MA50
+  - MA100
+  - MA200
+- Scatter plot chart:
+  - BUY: Represented by circles
+  - SELL: Represented by crosses
 
 ## Limitations
 This project has the following limitations:
