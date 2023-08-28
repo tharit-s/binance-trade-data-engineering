@@ -264,14 +264,14 @@ datalakehouse
 
 ### Data Visualization
 Once you enter the minutely interval you want to visualize, the system will always first read all coins from the gold zone. Then, it will display two charts for each coin. 
-1. OHLC Candle Stick Chart: The first chart will show the price of the coin over time.
+1. **OHLC Candle Stick Chart**: The first chart will show the price of the coin over time.
 ![ohlc candle stick chart](./images/ohlc_candle_stick_stxusdt_1_min.png)
 - Candle Stick chart:
   - Open
   - High
   - Low
   - Close
-2. OHLC Data with Technial Indicators: The second chart will show the price of trading for the coin over time together the technical indicator as MA(Moving Average) and the position for BUY and SELL.
+2. **OHLC Data with Technial Indicators**: The second chart will show the price of trading for the coin over time together the technical indicator as MA(Moving Average) and the position for BUY and SELL.
 ![ohlc data with technical indicators](./images/ohlc_ma_position_stxusdt_1_min.png)
 - Line chart:
   - Open
